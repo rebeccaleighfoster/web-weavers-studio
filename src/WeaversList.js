@@ -3,18 +3,23 @@ import React from 'react';
 export default class WeaversList extends React.Component {
 
     render() {
-        console.log("WeaversList:", this.props)
+        const displayWeaversList = this.props.weavers.map(function (weavers) {
+            return (
+                <ul>
+                <li>{weavers.firstName} {weavers.lastName}</li>
+                <li>{weavers.email}</li>
+                <li>{weavers.experienceLevel}</li>
+                <li>{weavers.loomType}</li>
+                <li>{weavers.State}</li>
+                <li>{weavers.bio}</li>
+                </ul>
+            );
+        });
+
         return (
             <>
-                <label for="Filter">Filter By:</label>
-                <select id="Filter">
-                    <option value="State">State</option>
-                    <option value="Loom"> Loom Type </option>
-                    <option value="Experience ">Experience Level </option>
-                </select>
-       
+                {displayWeaversList}
             </>
-//map over weavers array to display their info in a list, like notes in noteful
         )
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class WeaversList extends React.Component {
 
-    render(props) {
+    render() {
         console.log("WeaversList:", this.props)
         return (
             <>

@@ -127,9 +127,9 @@ export default class App extends React.Component {
     return (
       <>
         <Router>
-          <Route path="/" exact component={LandingPage}  />
+          <Route path="/" exact component={LandingPage} />
           <Route path="/CreateProfile" exact component={CreateProfile} />
-          <Route path="/WeaversList" render={(props) => <WeaversList {...props} />} />
+          <Route path="/WeaversList" render={(props) => <WeaversList weavers={this.props.weavers} {...props} />} />
         </Router>
       </>
     )

@@ -1,9 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import Nav from './Nav'
 
 export default class addProject extends React.Component {
     render() {
         return (
             <>
+                < Nav />
                 <h1>New Project</h1>
                 <form>
                     <label>
@@ -40,9 +43,9 @@ export default class addProject extends React.Component {
                         Project Width and Length off Loom <input type="text" name="size off loom" placeholder="10in x 20in" />
                     </label>
                 </form>
-                <button type="submit">Submit</button>
-
-
+                <Link to="projectsList">
+                    <button type="submit">Submit</button>
+                </Link>
             </>
         )
     }

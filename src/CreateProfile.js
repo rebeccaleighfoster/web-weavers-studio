@@ -1,42 +1,46 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Nav from "./Nav";
+import './CreateProfile.css'
 
-export default class LandingPage extends React.Component {
+export default class CreateProfile extends React.Component {
     render() {
         return (
             <>
-                <h1>New Weaver</h1>
+                < Nav />
                 <form id="newWeaver">
+                <h1>New Weaver</h1>
                     <div>
-                        <label for="first-name">First name</label>
+                        <label htmlFor="first-name">First name</label>
                         <input placeholder='First Name' type="text" name='first-name' id='first-name' />
                     </div>
                     <div>
-                        <label for="last-name">Last name</label>
+                        <label htmlFor="last-name">Last name</label>
                         <input type="text" name='last-name' id='last-name' placeholder='Last Name' />
                     </div>
                     <div>
-                        <label for="username">Email</label>
+                        <label htmlFor="username">Email</label>
                         <input type="text" name='username' id='username' />
                     </div>
                     <div>
-                        <label for="password">Password</label>
+                        <label htmlFor="password">Password</label>
                         <input type="password" name='password' id='password' />
                     </div>
-                    <label for="experience">Experience Level:</label>
+                    <label htmlFor="experience">Experience Level:</label>
                     <select id="experience">
                         <option value="beginner">Beginner</option>
                         <option value="intermediate">intermediate</option>
                         <option value="expert">Expert</option>
                         <option value="master">Master</option>
                     </select>
-                    <label for="loom type">Loom Type:</label>
+                    <label htmlFor="loom type">Loom Type:</label>
                     <select id="loom type">
                         <option value="Rigid heddle">Rigid Heddle</option>
                         <option value="Tapestry"> Tapestry/Frame </option>
                         <option value="Table Loom "> Table Loom </option>
                         <option value="Floor Loom"> Floor Loom </option>
                     </select>
-                    <label for="state">Where are you located?</label>
+                    <label htmlFor="state">Where are you located?</label>
                     <select id="state">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -90,12 +94,13 @@ export default class LandingPage extends React.Component {
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
-                    <div class="form-section">
-                        <label for="project description">Bio</label>
-                        <textarea name="bio" input placeholder='What do you want other weavers to know about you?' rows="15" required></textarea>
+                    <div className="form-section">
+                        <label htmlFor="project description">Bio</label>
+                        <textarea name="bio" input placeholder='What do you want other weavers to know about you?'></textarea>
                     </div>
-                    <button type="submit">Submit</button>
-                    <button type="reset">Reset</button>
+                    <Link to="./WeaversList">
+                        <button type="submit">Submit</button>
+                    </Link>
                 </form>
             </>
         )

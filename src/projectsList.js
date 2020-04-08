@@ -1,13 +1,21 @@
 import React from 'react';
+import Nav from './Nav';
+import './projectList.css'
 
 export default class ProjectsList extends React.Component {
     render() {
-        console.log("projectsList:", this.props)
+        console.log("from projects list:", this.props.projects)
+        // const displayProjectsList = this.props.projects.map(function (projects)  {
+        //filter by id
         return (
-            <>
-                <p> project List </p>
-            </>
-        )
+            <section className= "projectList">
+            < Nav/>
+            <ul>
+                <li>project title</li>
+                <li> hi</li>
+            </ul>
+            </section>
+        );
     }
 }
 

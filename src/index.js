@@ -12,10 +12,10 @@ const WEAVERS = [
 
 
 const PROJECTS = [
-  {"id": 1, "ProjectTitle":"towels", "ProjectDescription":"hjfkdla", "Weave Structure": "twill", "Warp Material": "cotton", "Warp Size": "3/2", "Weft Material": "wool" ,"Weft Size": "3/2","Sett": 12, "PPI": 22, "Size on Loom": "1x2" , "Size off loom":"5x6" , "Weaver Id":1 },
-  {"id": 2, "Project Title":"scaves","Project Description":"jfld;a", "Weave Structure": "overshot", "Warp Material": "cottolin", "Warp Size":"5/2" , "Weft Material":"linen" ,"Weft Size": "5/2" ,"Sett": 22, "PPI":32 , "Size on Loom": "2x3" , "Size off loom": "6x7", "Weaver Id":2 },
-  {"id": 3, "Project Title":"blanket","Project Description":"jkfld;a", "Weave Structure": "monks belt", "Warp Material": "pearl cotton", "Warp Size": "8/4" , "Weft Material": "jute" ,"Weft Size":"8/4" ,"Sett":14 , "PPI": 13, "Size on Loom":"3x4" , "Size off loom": "6x9", "Weaver Id":3 },
-  {"id": 4, "Project Title":"wall hanging","Project Description":"jfdls;a", "Weave Structure": "tapestry", "Warp Material": "wool", "Warp Size": "3/2", "Weft Material": "rayon" , "Weft Size": "10/2","Sett": 15, "PPI": 24, "Size on Loom": "4x5", "Size off loom": "9x3", "Weaver Id": 4},
+  {"id": 1, "ProjectTitle":"towels", "ProjectDescription":"hjfkdla", "WeaveStructure": "twill", "WarpMaterial": "cotton", "WarpSize": "3/2", "WeftMaterial": "wool" ,"WeftSize": "3/2","Sett": 12, "PPI": 22, "SizeonLoom": "1x2" , "Sizeoffloom":"5x6" , "WeaverId":1 },
+  {"id": 2, "ProjectTitle":"scaves","ProjectDescription":"jfld;a", "WeaveStructure": "overshot", "WarpMaterial": "cottolin", "WarpSize":"5/2" , "WeftMaterial":"linen" ,"WeftSize": "5/2" ,"Sett": 22, "PPI":32 , "SizeonLoom": "2x3" , "Sizeoffloom": "6x7", "WeaverId":1 },
+  {"id": 3, "ProjectTitle":"blanket","ProjectDescription":"jkfld;a", "WeaveStructure": "monks belt", "WarpMaterial": "pearl cotton", "WarpSize": "8/4" , "WeftMaterial": "jute" ,"WeftSize":"8/4" ,"Sett":14 , "PPI": 13, "SizeonLoom":"3x4" , "Sizeoffloom": "6x9", "WeaverId":1 },
+  {"id": 4, "ProjectTitle":"wall hanging","ProjectDescription":"jfdls;a", "WeaveStructure": "tapestry", "WarpMaterial": "wool", "WarpSize": "3/2", "WeftMaterial": "rayon" , "WeftSize": "10/2","Sett": 15, "PPI": 24, "SizeonLoom": "4x5", "Sizeoffloom": "9x3", "WeaverId": 1},
 
 ]
 

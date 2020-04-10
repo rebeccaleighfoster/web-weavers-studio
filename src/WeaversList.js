@@ -5,15 +5,18 @@ import './WeaversList.css'
 
 export default class WeaversList extends React.Component {
     render() {
-        const displayWeaversList = this.props.weavers.map(function (weavers) {
+        //const filterProjectsByWeaverID = () => console.log('filterProjectsByWeaverID Ran');
+        //add mapping over projects array of object, filter by weaver id
+        const displayWeaversList = this.props.weavers.map(function (weavers) { 
             return (
                 <ul>
-                    <Link to='./projectsList'><li>{weavers.firstName} {weavers.lastName}</li></Link>
-                    <li>{weavers.email}</li>
-                    <li>{weavers.experienceLevel}</li>
-                    <li>{weavers.loomType}</li>
-                    <li>{weavers.State}</li>
-                    <li>{weavers.bio}</li>
+                    <li>{weavers.firstName} {weavers.lastName}</li>
+                    <li>Email: {weavers.email}</li>
+                    <li>Experience Level: {weavers.experienceLevel}</li>
+                    <li>Type of Loom: {weavers.loomType}</li>
+                    <li>State Located:{weavers.State}</li>
+                    <li>Bio: {weavers.bio}</li>
+                    <li><Link to='./projectsList'>Completed Projects</Link> </li>
                 </ul>
             );
         });

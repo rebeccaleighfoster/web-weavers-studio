@@ -124,8 +124,16 @@ export default class App extends React.Component {
   };
 
   */
+
+filterProjectsByWeaverId = projectsByWeaverId => {
+    //map over projects and filter by weaver id, if id matches weaver that was clicked, display projects
+    console.log("filterProjectsByWeaverId")
+  }
+
+
   render() {
     console.log(this.props)
+    
     return (
       <>
         <Router>

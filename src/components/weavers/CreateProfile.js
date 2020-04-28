@@ -1,36 +1,34 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import Nav from "./Nav"
-import "./CreateProfile.css"
-
+import Nav from "../Nav"
+import "../stylesheets/CreateProfile.css"
 
 const CreateProfileForm = () => (
   <div>
     <Formik
       initialValues={{
-        firstName: "",
-        lastName: "",
+        first_name: "",
+        last_name: "",
         email: "",
         password: "",
-        experienceLevel: "",
-        loomType: "",
-        State: "",
+        experience_level: "",
+        loom_type: "",
+        state: "",
         bio: ""
       }}
       onSubmit={(values, { setSubmitting }) => {
-        fetch(`http://localhost:4000/weavers/`, {
-          method: 'POST',
-          header: {
-            'Content-Type': 'application/json'
+        fetch(`/weavers`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(values)
-        }).then(response => response.json())
-          .then(data => { console.log(data) })
-        // setTimeout(() => {
-        //   alert(JSON.stringify(values, null, 2));
-        //   setSubmitting(false);
-        // }, 500);
+          body: JSON.stringify(values),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          });
         console.log(values);
       }}
       validationSchema={Yup.object().shape({
@@ -49,30 +47,29 @@ const CreateProfileForm = () => (
           handleSubmit,
           handleReset
         } = props;
-
         return (
           <form onSubmit={handleSubmit} className="form">
             <div>
               <label htmlFor="firstName">First name</label>
               <input
                 required
-                value={values.firstName}
+                value={values.first_name}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="First Name"
                 type="text"
-                name="firstName"
+                name="first_name"
               />
             </div>
             <div>
               <label htmlFor="lastName">Last name</label>
               <input
-                value={values.lastName}
+                value={values.last_name}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 required
                 type="text"
-                name="lastName"
+                name="last_name"
                 placeholder="Last Name"
               />
             </div>
@@ -100,11 +97,11 @@ const CreateProfileForm = () => (
             </div>
             <label htmlFor="experience">Experience Level:</label>
             <select
-              value={values.experience}
+              value={values.experience_level}
               onChange={handleChange}
               onBlur={handleBlur}
               required
-              name="experience"
+              name="experience_level"
             >
               <option value="beginner">Beginner</option>
               <option value="intermediate">intermediate</option>
@@ -113,11 +110,11 @@ const CreateProfileForm = () => (
             </select>
             <label htmlFor="loomType">Loom Type:</label>
             <select
-              value={values.loomType}
+              value={values.loom_type}
               onChange={handleChange}
               onBlur={handleBlur}
               required
-              name="loomType"
+              name="loom_type"
             >
               <option value="Rigid heddle">Rigid Heddle</option>
               <option value="Tapestry"> Tapestry/Frame </option>
@@ -126,11 +123,11 @@ const CreateProfileForm = () => (
             </select>
             <label htmlFor="location">Where are you located?</label>
             <select
-              value={values.location}
+              value={values.state}
               onChange={handleChange}
               onBlur={handleBlur}
               required
-              name="location"
+              name="state"
             >
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -184,6 +181,16 @@ const CreateProfileForm = () => (
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
+            <label htmlFor="bio">Bio </label>
+              <input
+                value={values.bio}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                required
+                type="textarea"
+                name="bio"
+                placeholder="A short bio telling other users a little about yourself"
+              />
             <button
               type="button"
               className="outline"
@@ -201,7 +208,6 @@ const CreateProfileForm = () => (
     </Formik>
   </div>
 );
-
 function CreateProfile() {
   console.log('create profile ran')
   return (
@@ -211,6 +217,4 @@ function CreateProfile() {
     </>
   )
 }
-
 export default CreateProfile
-//this data will be used to populate the weavers table

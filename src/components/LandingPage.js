@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 import Nav from "./Nav";
-import './LandingPage.css';
+import './stylesheets/LandingPage.css';
 
 export default class LandingPage extends React.Component {
     render() {

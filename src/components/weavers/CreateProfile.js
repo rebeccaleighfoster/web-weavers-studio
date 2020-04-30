@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik } from "formik";
+import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Nav from "../Nav"
 import "../stylesheets/CreateProfile.css"
@@ -60,6 +60,7 @@ const CreateProfileForm = () => (
                 type="text"
                 name="first_name"
               />
+              <ErrorMessage name="first_name" />
             </div>
             <div>
               <label htmlFor="lastName">Last name</label>
@@ -73,6 +74,7 @@ const CreateProfileForm = () => (
                 placeholder="Last Name"
               />
             </div>
+
             <div>
               <label htmlFor="email">Email</label>
               <input
@@ -209,7 +211,6 @@ const CreateProfileForm = () => (
   </div>
 );
 function CreateProfile() {
-  console.log('create profile ran')
   return (
     <>
       <Nav />

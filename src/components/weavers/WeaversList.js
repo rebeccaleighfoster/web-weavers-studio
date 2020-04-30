@@ -28,6 +28,26 @@ export default class WeaversList extends React.Component {
             });
     }
 
+    handleWeaversDelete = (project) => {
+        console.log(this.state.weavers)
+        // const projectId = this.state.weavers.id;
+        // fetch(`/weavers/${weaverId}`, {
+        //   method: 'DELETE',
+        //   headers: {
+        //     'content-type': 'application/json'
+        //   },
+        // })
+        //   .then(res => {
+        //     if (res.ok){
+        //       this.fetchWeavers();
+        //       this.fetchProjectsByWeaverId()
+        //     }
+        //   })
+        //   .catch(error => {
+        //     console.error({ error })
+        //   })
+      };
+
      componentDidMount(){
       this.fetchWeavers();
     }
@@ -45,6 +65,7 @@ export default class WeaversList extends React.Component {
                         <li>Type of Loom: {weaver.loom_type}</li>
                         <li>State Located:{weaver.state}</li>
                         <li>Bio: {weaver.bio}</li>
+                        <button onClick={() => this.handleWeaversDelete()}> delete </button>
                         <li><Link to={`/projectsList/${weaver.id}`}>Completed Projects</Link> </li>
                     </ul>)
                 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import '../stylesheets/myStyles.css'
 
 function AddProject(values) {
     fetch(`/projects`, {
@@ -12,7 +13,7 @@ function AddProject(values) {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            console.log("from addproject", data);
         });
 }
 
@@ -27,7 +28,7 @@ const EditProject = (values) => {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            console.log("from edit project", data);
         });
 }
 
@@ -39,13 +40,13 @@ const AddProjectForm = (props) => (
             initialValues={props.project || {}}
             onSubmit={(values, { setSubmitting }) => {
                 console.log("on submit", values)
-                if(values.id) {
+                if (values.id) {
                     EditProject(values)
                 }
-                else{
+                else {
                     AddProject(values)
                 }
-                    
+
             }}
         >
             {props => {
@@ -59,8 +60,9 @@ const AddProjectForm = (props) => (
                 } = props;
                 return (
                     <form onSubmit={handleSubmit} className="form">
-                        <div>
-                            <label htmlFor="project_title">Project Title</label>
+                        <p id="formHeader" className="biggerFont">Add a New Project</p>
+                        <div className="smallerFont">
+                            <label htmlFor="project_title">Project Title:</label>
                             <input
                                 id="project_title"
                                 name="project_title"
@@ -71,8 +73,8 @@ const AddProjectForm = (props) => (
                                 value={values.project_title}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="project_description">Project Description</label>
+                        <div className="smallerFont">
+                            <label htmlFor="project_description">Project Description:</label>
                             <input
                                 id="project_description"
                                 name="project_description"
@@ -83,8 +85,8 @@ const AddProjectForm = (props) => (
                                 value={values.project_description}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="weave_structure">Weave Structure</label>
+                        <div className="smallerFont">
+                            <label htmlFor="weave_structure">Weave Structure:</label>
                             <input
                                 id="weave_structure"
                                 name="weave_structure"
@@ -95,8 +97,8 @@ const AddProjectForm = (props) => (
                                 value={values.weave_structure}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="warp_material">Warp Material</label>
+                        <div className="smallerFont">
+                            <label htmlFor="warp_material">Warp Material:</label>
                             <input
                                 id="warp_material"
                                 name="warp_material"
@@ -106,8 +108,8 @@ const AddProjectForm = (props) => (
                                 value={values.warp_material}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="warp_size">Warp Size</label>
+                        <div className="smallerFont">
+                            <label htmlFor="warp_size">Warp Size:</label>
                             <input
                                 id="warp_size"
                                 name="warp_size"
@@ -117,8 +119,8 @@ const AddProjectForm = (props) => (
                                 value={values.warp_size}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="weft_size">Weft Size</label>
+                        <div className="smallerFont">
+                            <label htmlFor="weft_size">Weft Size:</label>
                             <input
                                 id="weft_size"
                                 name="weft_size"
@@ -128,8 +130,8 @@ const AddProjectForm = (props) => (
                                 value={values.weft_size}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="sett">Sett</label>
+                        <div className="smallerFont">
+                            <label htmlFor="sett">Sett:</label>
                             <input
                                 id="sett"
                                 name="sett"
@@ -139,8 +141,8 @@ const AddProjectForm = (props) => (
                                 value={values.sett}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="ppi">Picks Per Inch</label>
+                        <div className="smallerFont">
+                            <label htmlFor="ppi">Picks Per Inch:</label>
                             <input
                                 id="ppi"
                                 name="ppi"
@@ -150,8 +152,8 @@ const AddProjectForm = (props) => (
                                 value={values.ppi}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="size_on_loom">Size On Loom</label>
+                        <div className="smallerFont">
+                            <label htmlFor="size_on_loom">Size On Loom:</label>
                             <input
                                 id="size_on_loom"
                                 name="size_on_loom"
@@ -161,8 +163,8 @@ const AddProjectForm = (props) => (
                                 value={values.size_on_loom}
                             />
                         </div>
-                        <div>
-                            <label htmlFor="size_off_loom">Size Off Loom</label>
+                        <div className="smallerFont">
+                            <label htmlFor="size_off_loom">Size Off Loom:</label>
                             <input
                                 id="size_off_loom"
                                 name="size_off_loom"
@@ -174,15 +176,17 @@ const AddProjectForm = (props) => (
                         </div>
                         <button
                             type="button"
-                            className="outline"
                             onClick={handleReset}
                             disabled={!dirty || isSubmitting}
                         >
                             Reset
-            </button>
-                        <button type="submit" disabled={isSubmitting}>
+                         </button>
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                        >
                             Submit
-            </button>
+                          </button>
                     </form>
                 );
             }}

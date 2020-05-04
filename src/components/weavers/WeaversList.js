@@ -28,45 +28,27 @@ export default class WeaversList extends React.Component {
             });
     }
 
-    handleWeaversDelete = (project) => {
-        console.log(this.state.weavers)
-        // const projectId = this.state.weavers.id;
-        // fetch(`/weavers/${weaverId}`, {
-        //   method: 'DELETE',
-        //   headers: {
-        //     'content-type': 'application/json'
-        //   },
-        // })
-        //   .then(res => {
-        //     if (res.ok){
-        //       this.fetchWeavers();
-        //       this.fetchProjectsByWeaverId()
-        //     }
-        //   })
-        //   .catch(error => {
-        //     console.error({ error })
-        //   })
-      };
 
-     componentDidMount(){
-      this.fetchWeavers();
+    componentDidMount() {
+        this.fetchWeavers();
     }
 
     render() {
         console.log(this.state)
         return (
-            <section className="weaversList">
+            <section>
                 < Nav />
                 {this.state.weavers.map(weaver =>
-                    <ul>
-                        <li>{weaver.first_name} {weaver.last_name}</li>
-                        <li>Email: {weaver.email}</li>
-                        <li>Experience Level: {weaver.experience_level}</li>
-                        <li>Type of Loom: {weaver.loom_type}</li>
-                        <li>State Located:{weaver.state}</li>
-                        <li>Bio: {weaver.bio}</li>
-                        <button onClick={() => this.handleWeaversDelete()}> delete </button>
-                        <li><Link to={`/projectsList/${weaver.id}`}>Completed Projects</Link> </li>
+                    <ul className="infoText">
+                        <li className="biggerFont">{weaver.first_name} {weaver.last_name}</li>
+                        <section className="smallerFont">
+                            <li>Email: {weaver.email}</li>
+                            <li>Experience Level: {weaver.experience_level}</li>
+                            <li>Type of Loom: {weaver.loom_type}</li>
+                            <li>State Located: {weaver.state}</li>
+                            <li>Bio: jdkls;ajdkl;sjakdl;jsa; csakj dsaj; dka;lj dkas;ld jsa; djksl jdskl;sd jskl; kdslj{weaver.bio} </li>
+                            <button><Link to={`/projectsList/${weaver.id}`}> Projects</Link> </button>
+                        </section>
                     </ul>)
                 }
             </section>

@@ -5,7 +5,10 @@ import CreateProfile from './components/weavers/CreateProfile';
 import WeaversList from './components/weavers/WeaversList';
 import ProjectsList from './components/projects/projectsList';
 import addProject from './components/projects/addProject';
-import EditProject from './components/projects/editProject'
+import EditProject from './components/projects/editProject';
+import myStyles from './components/stylesheets/myStyles.css';
+
+
 
 
 export default class App extends React.Component {
@@ -52,7 +55,6 @@ export default class App extends React.Component {
 
     return (
       <>
-
         <Router>
           <Route path="/" exact component={LandingPage} />
           <Route path="/CreateProfile" exact component={CreateProfile} />

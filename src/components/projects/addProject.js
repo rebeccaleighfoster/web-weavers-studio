@@ -1,7 +1,6 @@
 import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import Nav from '../Nav';
-import * as Yup from 'yup';
 import AddProjectForm from "./form"
 
 

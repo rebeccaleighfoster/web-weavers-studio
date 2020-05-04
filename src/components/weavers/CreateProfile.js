@@ -2,7 +2,6 @@ import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Nav from "../Nav"
-import "../stylesheets/CreateProfile.css"
 
 const CreateProfileForm = () => (
   <div>
@@ -49,8 +48,9 @@ const CreateProfileForm = () => (
         } = props;
         return (
           <form onSubmit={handleSubmit} className="form">
-            <div>
-              <label htmlFor="firstName">First name</label>
+            <div className="biggerFont">Create a Profile</div>
+            <div className="smallerFont">
+              <label htmlFor="firstName">First name: </label>
               <input
                 required
                 value={values.first_name}
@@ -62,8 +62,8 @@ const CreateProfileForm = () => (
               />
               <ErrorMessage name="first_name" />
             </div>
-            <div>
-              <label htmlFor="lastName">Last name</label>
+            <div className="smallerFont">
+              <label htmlFor="lastName">Last name: </label>
               <input
                 value={values.last_name}
                 onChange={handleChange}
@@ -75,8 +75,8 @@ const CreateProfileForm = () => (
               />
             </div>
 
-            <div>
-              <label htmlFor="email">Email</label>
+            <div className="smallerFont">
+              <label htmlFor="email">Email: </label>
               <input
                 value={values.email}
                 onChange={handleChange}
@@ -86,8 +86,8 @@ const CreateProfileForm = () => (
                 name="email"
               />
             </div>
-            <div>
-              <label htmlFor="password">Password</label>
+            <div className="smallerFont">
+              <label htmlFor="password">Password: </label>
               <input
                 value={values.password}
                 onChange={handleChange}
@@ -97,93 +97,98 @@ const CreateProfileForm = () => (
                 name="password"
               />
             </div>
-            <label htmlFor="experience">Experience Level:</label>
-            <select
-              value={values.experience_level}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              required
-              name="experience_level"
-            >
-              <option value="beginner">Beginner</option>
-              <option value="intermediate">intermediate</option>
-              <option value="expert">Expert</option>
-              <option value="master">Master</option>
-            </select>
-            <label htmlFor="loomType">Loom Type:</label>
-            <select
-              value={values.loom_type}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              required
-              name="loom_type"
-            >
-              <option value="Rigid heddle">Rigid Heddle</option>
-              <option value="Tapestry"> Tapestry/Frame </option>
-              <option value="Table Loom "> Table Loom </option>
-              <option value="Floor Loom"> Floor Loom </option>
-            </select>
-            <label htmlFor="location">Where are you located?</label>
-            <select
-              value={values.state}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              required
-              name="state"
-            >
-              <option value="AL">Alabama</option>
-              <option value="AK">Alaska</option>
-              <option value="AZ">Arizona</option>
-              <option value="AR">Arkansas</option>
-              <option value="CA">California</option>
-              <option value="CO">Colorado</option>
-              <option value="CT">Connecticut</option>
-              <option value="DE">Delaware</option>
-              <option value="DC">District Of Columbia</option>
-              <option value="FL">Florida</option>
-              <option value="GA">Georgia</option>
-              <option value="HI">Hawaii</option>
-              <option value="ID">Idaho</option>
-              <option value="IL">Illinois</option>
-              <option value="IN">Indiana</option>
-              <option value="IA">Iowa</option>
-              <option value="KS">Kansas</option>
-              <option value="KY">Kentucky</option>
-              <option value="LA">Louisiana</option>
-              <option value="ME">Maine</option>
-              <option value="MD">Maryland</option>
-              <option value="MA">Massachusetts</option>
-              <option value="MI">Michigan</option>
-              <option value="MN">Minnesota</option>
-              <option value="MS">Mississippi</option>
-              <option value="MO">Missouri</option>
-              <option value="MT">Montana</option>
-              <option value="NE">Nebraska</option>
-              <option value="NV">Nevada</option>
-              <option value="NH">New Hampshire</option>
-              <option value="NJ">New Jersey</option>
-              <option value="NM">New Mexico</option>
-              <option value="NY">New York</option>
-              <option value="NC">North Carolina</option>
-              <option value="ND">North Dakota</option>
-              <option value="OH">Ohio</option>
-              <option value="OK">Oklahoma</option>
-              <option value="OR">Oregon</option>
-              <option value="PA">Pennsylvania</option>
-              <option value="RI">Rhode Island</option>
-              <option value="SC">South Carolina</option>
-              <option value="SD">South Dakota</option>
-              <option value="TN">Tennessee</option>
-              <option value="TX">Texas</option>
-              <option value="UT">Utah</option>
-              <option value="VT">Vermont</option>
-              <option value="VA">Virginia</option>
-              <option value="WA">Washington</option>
-              <option value="WV">West Virginia</option>
-              <option value="WI">Wisconsin</option>
-              <option value="WY">Wyoming</option>
-            </select>
-            <label htmlFor="bio">Bio </label>
+            <div className="smallerFont">
+              <label htmlFor="experience">Experience Level:</label>
+              <select
+                value={values.experience_level}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                required
+                name="experience_level"
+              >
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">intermediate</option>
+                <option value="expert">Expert</option>
+                <option value="master">Master</option>
+              </select>
+            </div>
+            <div className="smallerFont">            <label htmlFor="loomType">Loom Type:</label>
+              <select
+                value={values.loom_type}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                required
+                name="loom_type"
+              >
+                <option value="Rigid heddle">Rigid Heddle</option>
+                <option value="Tapestry"> Tapestry/Frame </option>
+                <option value="Table Loom "> Table Loom </option>
+                <option value="Floor Loom"> Floor Loom </option>
+              </select>
+            </div>
+            <div className="smallerFont">            <label htmlFor="location">Where are you located?</label>
+              <select
+                value={values.state}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                required
+                name="state"
+              >
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
+            <div className="smallerFont">
+              <label htmlFor="bio">Bio </label>
               <input
                 value={values.bio}
                 onChange={handleChange}
@@ -193,6 +198,8 @@ const CreateProfileForm = () => (
                 name="bio"
                 placeholder="A short bio telling other users a little about yourself"
               />
+            </div>
+            <br></br>
             <button
               type="button"
               className="outline"
@@ -201,6 +208,7 @@ const CreateProfileForm = () => (
             >
               Reset
             </button>
+            <br></br>
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>

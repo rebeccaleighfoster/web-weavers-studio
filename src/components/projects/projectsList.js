@@ -5,13 +5,12 @@ import Nav from '../Nav';
 
 
 
+
 export default class ProjectsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       projects: [],
-      // noData: true,
-
     }
   }
   handleProjectDelete = (project_id) => {
@@ -39,13 +38,6 @@ export default class ProjectsList extends React.Component {
           return resp.json().then(e => Promise.reject(e));
         return resp.json();
       })
-      //   .then(resp=>{
-      //     if (!resp.length) {
-      //       this.setState({
-      //         noData: true
-      //       }) 
-      //     }
-      // })
       .then(data => {
         this.setState({
           projects: data
@@ -65,13 +57,17 @@ export default class ProjectsList extends React.Component {
     this.fetchProjectsByWeaverId();
   }
   render() {
-  //   console.log("hi", this.state)
-  //   if (this.state.noData) {
-  //     return( 
-  //     <p>No Data was returned!</p>
-  //     );
-  //   }}
-  //  }
+    console.log(this.state.projects)
+    if (Array.isArray(this.state.projects) && this.state.projects.length === 0) {
+      return (
+        <>
+          <Nav />
+          <div className='infoText'> <h2> That weaver has not recorded any projects yet.</h2>
+            <button> <Link to='/weaversList'> Back to Weavers </Link> </button>
+          </div>
+        </>
+      )
+    }
     return (
       <>
         < Nav />
@@ -80,7 +76,7 @@ export default class ProjectsList extends React.Component {
             <ul className='infoText'>
               <section className="smallerFont">
                 <li> Project Name: {project.project_title}</li>
-                 <li> Project Description: {project.project_description} </li>
+                <li> Project Description: {project.project_description} </li>
                 <li> Weave Structure: {project.weave_structure}</li>
                 <li> Warp Material: {project.warp_material}</li>
                 <li> Weft Material: {project.weft_material}</li>
@@ -93,6 +89,7 @@ export default class ProjectsList extends React.Component {
               <button><Link to={`/Projects/edit/${project.id}`} >
                 Edit Project
               </Link></button>
+              <button> <Link to='/weaversList'> Back to Weavers </Link> </button>
             </ul>
           </section>)}
 

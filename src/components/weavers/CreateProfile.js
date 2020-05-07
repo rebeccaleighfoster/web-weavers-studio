@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Nav from "../Nav"
+import Nav from "../Nav";
 
 const CreateProfileForm = () => (
   <div>
@@ -17,6 +17,7 @@ const CreateProfileForm = () => (
         bio: ""
       }}
       onSubmit={(values, { setSubmitting }) => {
+        console.log(values, "from createprofile")
         fetch(`/weavers`, {
           method: "POST",
           headers: {
@@ -27,6 +28,8 @@ const CreateProfileForm = () => (
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
+            setSubmitting(false);
+            window.location.href = '/weaverslist'
           });
         console.log(values);
       }}
@@ -210,7 +213,7 @@ const CreateProfileForm = () => (
             </button>
             <br></br>
             <button type="submit" disabled={isSubmitting}>
-              Submit
+              Submit 
             </button>
           </form>
         );

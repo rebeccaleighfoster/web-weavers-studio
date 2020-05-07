@@ -6,7 +6,9 @@ import WeaversList from './components/weavers/WeaversList';
 import ProjectsList from './components/projects/projectsList';
 import addProject from './components/projects/addProject';
 import EditProject from './components/projects/editProject';
-import myStyles from './components/stylesheets/myStyles.css';
+import Allprojects from './components/projects/Allprojects';
+import OneWeaver from './components/weavers/OneWeaver';
+
 
 
 
@@ -31,28 +33,8 @@ export default class App extends React.Component {
       });
   }
 
-  // fetchWeavers = () => {
-  //   fetch(`/weavers`)
-  //     .then((weaversResponse) => {
-  //       if (!weaversResponse.ok)
-  //         return weaversResponse.json().then(e => Promise.reject(e));
-  //       return weaversResponse.json();
-  //     })
-  //     .then((weavers) => {
-  //       this.setState({
-  //         weavers
-  //       });
-  //     })
-  //     .catch(error => {
-  //       console.error({ error });
-  //     });
-  // }
-
-
 
   render() {
-    console.log(this.props)
-
     return (
       <>
         <Router>
@@ -62,6 +44,8 @@ export default class App extends React.Component {
           <Route path="/ProjectsList/:weaver_id" render={(props) => <ProjectsList projects={this.props.projects} {...props} />} />
           <Route path="/AddProject" exact component={addProject} />
           <Route path="/Projects/edit/:project_id" exact component={EditProject} />
+          <Route path="/Projects/" exact component={Allprojects} />
+          <Route path='/Weavers/:weaver_id' exact component={OneWeaver} />
         </Router>
 
       </>

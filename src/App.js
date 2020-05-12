@@ -40,8 +40,8 @@ export default class App extends React.Component {
         <Router>
           <Route path="/" exact component={LandingPage} />
           <Route path="/CreateProfile" exact component={CreateProfile} />
-          <Route path="/WeaversList" render={(props) => <WeaversList weavers={this.props.weavers} {...props} />} />
-          <Route path="/ProjectsList/:weaver_id" render={(props) => <ProjectsList projects={this.props.projects} {...props} />} />
+          <Route path="/WeaversList" exact component= {WeaversList} />
+          <Route path="/ProjectsList/:weaver_id" exact component= {ProjectsList}/> 
           <Route path="/AddProject" exact component={addProject} />
           <Route path="/Projects/edit/:project_id" exact component={EditProject} />
           <Route path="/Projects/" exact component={Allprojects} />

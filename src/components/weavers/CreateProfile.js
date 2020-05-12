@@ -90,17 +90,6 @@ const CreateProfileForm = () => (
               />
             </div>
             <div className="smallerFont">
-              <label htmlFor="password">Password: </label>
-              <input
-                value={values.password}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                required
-                type="password"
-                name="password"
-              />
-            </div>
-            <div className="smallerFont">
               <label htmlFor="experience">Experience Level:</label>
               <select
                 value={values.experience_level}

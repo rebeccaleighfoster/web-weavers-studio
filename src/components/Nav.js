@@ -11,8 +11,8 @@ export default class Nav extends React.Component {
                         <div className='link'>
                             <li className='loom'><Link to='/'><img src={require('./loom.png')} className='loom' alt='loom'></img></Link></li>
                             <li> <Link to='/weaverslist'> Meet Weavers</Link></li>
-                            <li><Link to ='/projects'> See Projects</Link></li>
-                            <li ><Link to='/createprofile'> Create Profile </Link></li>
+                            <li> <Link to ='/projects'> See Projects</Link></li>
+                            <li> <Link to='/createprofile'> Create Profile </Link></li>
                             <li> <Link to='/addProject'> Add Project </Link></li>
                         </div>
                     </ul>

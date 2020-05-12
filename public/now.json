@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "alias": "rebeccas-web-weaver-studio",
     "name": "web-weavers-studio",
     "routes": [
         { "handle": "filesystem" },

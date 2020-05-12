@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../Nav';
-import AddProjectForm from "./form"
+import AddProjectForm from "./Form"
 
 
 function AddProject() {

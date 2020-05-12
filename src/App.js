@@ -3,10 +3,10 @@ import LandingPage from './components/LandingPage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import CreateProfile from './components/weavers/CreateProfile';
 import WeaversList from './components/weavers/WeaversList';
-import ProjectsList from './components/projects/projectsList';
-import addProject from './components/projects/addProject';
-import EditProject from './components/projects/editProject';
-import Allprojects from './components/projects/Allprojects';
+import ProjectsList from './components/projects/ProjectsList';
+import AddProject from './components/projects/AddProject';
+import EditProject from './components/projects/EditProject';
+import AllProjects from './components/projects/AllProjects';
 import OneWeaver from './components/weavers/OneWeaver';
 
 
@@ -42,9 +42,9 @@ export default class App extends React.Component {
           <Route path="/CreateProfile" exact component={CreateProfile} />
           <Route path="/WeaversList" exact component= {WeaversList} />
           <Route path="/ProjectsList/:weaver_id" exact component= {ProjectsList}/> 
-          <Route path="/AddProject" exact component={addProject} />
+          <Route path="/AddProject" exact component={AddProject} />
           <Route path="/Projects/edit/:project_id" exact component={EditProject} />
-          <Route path="/Projects/" exact component={Allprojects} />
+          <Route path="/Projects/" exact component={AllProjects} />
           <Route path='/Weavers/:weaver_id' exact component={OneWeaver} />
         </Router>
 

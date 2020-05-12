@@ -55,7 +55,7 @@ class OneWeaver extends Component {
                             <li>Experience Level: {this.state.weaver.experience_level}</li>
                             <li>Type of Loom: {this.state.weaver.loom_type}</li>
                             <li>State Located: {this.state.weaver.state}</li>
-                            <li>Bio: jdkls;ajdkl;sjakdl;jsa; csakj dsaj; dka;lj dkas;ld jsa; djksl jdskl;sd jskl; kdslj{this.state.weaver.bio} </li>
+                            <li>Bio: {this.state.weaver.bio} </li>
                             <button onClick={this.handleClick}> See all projects by this weaver</button>
                         </section>
                     </ul>)

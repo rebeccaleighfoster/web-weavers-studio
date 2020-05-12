@@ -1,5 +1,5 @@
 import React from 'react';
-import Allprojects from './Allprojects';
+import Allprojects from './AllProjects';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 

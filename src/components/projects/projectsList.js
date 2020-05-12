@@ -81,8 +81,8 @@ export default class ProjectsList extends React.Component {
                 <li> Warp Material: {project.warp_material}</li>
                 <li> Weft Material: {project.weft_material}</li>
                 <li> Sett: {project.sett}</li>
-                <li> Size on the loom: {project.size_on_loom}</li>
-                <li> Size after finishing and shrinkage: {project.size_off_loom}</li>
+                <li> Size on the Loom: {project.size_on_loom}</li>
+                <li> Size After Finishing and Shrinkage: {project.size_off_loom}</li>
               </section>
               <button onClick={() => this.handleProjectDelete(project.id)}> Delete </button>
               <br></br>

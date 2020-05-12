@@ -10,7 +10,6 @@ const CreateProfileForm = () => (
         first_name: "",
         last_name: "",
         email: "",
-        password: "",
         experience_level: "",
         loom_type: "",
         state: "",
@@ -99,7 +98,7 @@ const CreateProfileForm = () => (
                 name="experience_level"
               >
                 <option value="beginner">Beginner</option>
-                <option value="intermediate">intermediate</option>
+                <option value="intermediate">Intermediate</option>
                 <option value="expert">Expert</option>
                 <option value="master">Master</option>
               </select>

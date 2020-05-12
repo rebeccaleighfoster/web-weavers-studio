@@ -52,8 +52,8 @@ class Allprojects extends Component {
                             <li> Warp Material: {project.warp_material}</li>
                             <li> Weft Material: {project.weft_material}</li>
                             <li> Sett: {project.sett}</li>
-                            <li> Size on the loom: {project.size_on_loom}</li>
-                            <li> Size after finishing and shrinkage: {project.size_off_loom}</li>
+                            <li> Size On The Loom: {project.size_on_loom}</li>
+                            <li> Size After Finishing and Shrinkage: {project.size_off_loom}</li>
                             <li> <Link to={`/Weavers/${project.weaver_id}`}> Meet Weaver</Link> </li>
                         </ul>)
                     }
@@ -64,5 +64,3 @@ class Allprojects extends Component {
 
 
 export default Allprojects;
-
-//<Link to={`/Weavers/${project.weaver_id}`}>

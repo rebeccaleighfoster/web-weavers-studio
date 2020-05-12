@@ -15,7 +15,7 @@ function AddProject(values, setSubmitting) {
         .then((data) => {
             console.log("from addproject", data);
             setSubmitting(false);
-            // window.location.href = '/projects'
+            window.location.href = '/projects'
         });
 }
 
@@ -33,6 +33,7 @@ const EditProject = (values, setSubmitting) => {
         .then((data) => {
             console.log("from edit project", data);
             setSubmitting(false);
+            window.location.href = '/projects'
         });
 }
 

@@ -45,7 +45,7 @@ export default class WeaversList extends React.Component {
                             <li>Experience Level: {weaver.experience_level}</li>
                             <li>Type of Loom: {weaver.loom_type}</li>
                             <li>State Located: {weaver.state}</li>
-                            <li>Bio: jdkls;ajdkl;sjakdl;jsa; csakj dsaj; dka;lj dkas;ld jsa; djksl jdskl;sd jskl; kdslj{weaver.bio} </li>
+                            <li>Bio: {weaver.bio} </li>
                             <button><Link to={`/projectsList/${weaver.id}`}> Projects</Link> </button>
                         </section>
                     </ul>)

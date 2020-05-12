@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../Nav';
 
 
-import AddProjectForm from "./form"
+import AddProjectForm from "./Form"
 
 class EditProject extends React.Component {
     constructor(props) {

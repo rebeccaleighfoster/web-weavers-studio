@@ -3,7 +3,7 @@ import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Nav from "../Nav";
 import { URL } from "../../config";
- 
+
 const CreateProfileForm = () => (
   <div>
     <Formik
@@ -14,10 +14,10 @@ const CreateProfileForm = () => (
         experience_level: "",
         loom_type: "",
         state: "",
-        bio: ""
+        bio: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values, "from createprofile")
+        console.log(values, "from createprofile");
         fetch(`${URL}/weavers`, {
           method: "POST",
           headers: {
@@ -28,16 +28,14 @@ const CreateProfileForm = () => (
           .then((response) => response.json())
           .then((data) => {
             setSubmitting(false);
-            window.location.href = '/weaverslist'
+            window.location.href = "/weaverslist";
           });
       }}
       validationSchema={Yup.object().shape({
-        email: Yup.string()
-          .email()
-          .required("Required")
+        email: Yup.string().email().required("Required"),
       })}
     >
-      {props => {
+      {(props) => {
         const {
           values,
           dirty,
@@ -45,7 +43,7 @@ const CreateProfileForm = () => (
           handleChange,
           handleBlur,
           handleSubmit,
-          handleReset
+          handleReset,
         } = props;
         return (
           <form onSubmit={handleSubmit} className="form">
@@ -102,7 +100,9 @@ const CreateProfileForm = () => (
                 <option value="master">Master</option>
               </select>
             </div>
-            <div className="smallerFont">            <label htmlFor="loomType">Loom Type:</label>
+            <div className="smallerFont">
+              {" "}
+              <label htmlFor="loomType">Loom Type:</label>
               <select
                 value={values.loom_type}
                 onChange={handleChange}
@@ -116,7 +116,9 @@ const CreateProfileForm = () => (
                 <option value="Floor Loom"> Floor Loom </option>
               </select>
             </div>
-            <div className="smallerFont">            <label htmlFor="location">Where are you located?</label>
+            <div className="smallerFont">
+              {" "}
+              <label htmlFor="location">Where are you located?</label>
               <select
                 value={values.state}
                 onChange={handleChange}
@@ -200,7 +202,7 @@ const CreateProfileForm = () => (
             </button>
             <br></br>
             <button type="submit" disabled={isSubmitting}>
-              Submit 
+              Submit
             </button>
           </form>
         );
@@ -214,6 +216,6 @@ function CreateProfile() {
       <Nav />
       <CreateProfileForm />
     </>
-  )
+  );
 }
-export default CreateProfile
+export default CreateProfile;

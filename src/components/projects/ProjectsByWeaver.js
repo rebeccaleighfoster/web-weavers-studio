@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import Nav from '../Nav';
+import Nav from "../Nav";
 import { URL } from "../../config";
 
 export default class ProjectsList extends React.Component {
@@ -8,45 +8,46 @@ export default class ProjectsList extends React.Component {
     super(props);
     this.state = {
       projects: [],
-    }
+    };
   }
   handleProjectDelete = (project_id) => {
     fetch(`${URL}/projects/${project_id}`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
     })
-      .then(res => {
+      .then((res) => {
         if (res.ok) {
-          this.fetchProjectsByWeaverId()
+          this.fetchProjectsByWeaverId();
         }
       })
-      .catch(error => {
-        console.error({ error })
-      })
+      .catch((error) => {
+        console.error({ error });
+      });
   };
-  
+
   fetchProjectsByWeaverId = () => {
     const { weaver_id } = this.props.match.params;
     fetch(`${URL}/projects/${weaver_id}`)
       .then((resp) => {
-        if (!resp.ok)
-          return resp.json().then(e => Promise.reject(e));
+        if (!resp.ok) return resp.json().then((e) => Promise.reject(e));
         return resp.json();
       })
-      .then(data => {
+      .then((data) => {
         this.setState({
-          projects: data
-        })
+          projects: data,
+        });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error({ error });
       });
-  }
+  };
 
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.weaver_id !== prevProps.match.params.weaver_id) {
+    if (
+      this.props.match.params.weaver_id !== prevProps.match.params.weaver_id
+    ) {
       this.fetchProjectsByWeaverId();
     }
   }
@@ -54,23 +55,31 @@ export default class ProjectsList extends React.Component {
     this.fetchProjectsByWeaverId();
   }
   render() {
-    console.log(this.state.projects)
-    if (Array.isArray(this.state.projects) && this.state.projects.length === 0) {
+    console.log(this.state.projects);
+    if (
+      Array.isArray(this.state.projects) &&
+      this.state.projects.length === 0
+    ) {
       return (
         <>
           <Nav />
-          <div className='infoText'> <h2> That weaver has not recorded any projects yet.</h2>
-            <button> <Link to='/weaversList'> Back to Weavers </Link> </button>
+          <div className="infoText">
+            {" "}
+            <h2> That weaver has not recorded any projects yet.</h2>
+            <button>
+              {" "}
+              <Link to="/weaversList"> Back to Weavers </Link>{" "}
+            </button>
           </div>
         </>
-      )
+      );
     }
     return (
       <>
-        < Nav />
-        {this.state.projects.map(project =>
+        <Nav />
+        {this.state.projects.map((project) => (
           <section>
-            <ul className='infoText'>
+            <ul className="infoText">
               <section className="smallerFont">
                 <li> Project Name: {project.project_title}</li>
                 <li> Project Description: {project.project_description} </li>
@@ -79,17 +88,26 @@ export default class ProjectsList extends React.Component {
                 <li> Weft Material: {project.weft_material}</li>
                 <li> Sett: {project.sett}</li>
                 <li> Size on the Loom: {project.size_on_loom}</li>
-                <li> Size After Finishing and Shrinkage: {project.size_off_loom}</li>
+                <li>
+                  {" "}
+                  Size After Finishing and Shrinkage: {project.size_off_loom}
+                </li>
               </section>
-              <button onClick={() => this.handleProjectDelete(project.id)}> Delete </button>
+              <button onClick={() => this.handleProjectDelete(project.id)}>
+                {" "}
+                Delete{" "}
+              </button>
               <br></br>
-              <button><Link to={`/Projects/edit/${project.id}`} >
-                Edit Project
-              </Link></button>
-              <button> <Link to='/weaversList'> Back to Weavers </Link> </button>
+              <button>
+                <Link to={`/Projects/edit/${project.id}`}>Edit Project</Link>
+              </button>
+              <button>
+                {" "}
+                <Link to="/weaversList"> Back to Weavers </Link>{" "}
+              </button>
             </ul>
-          </section>)}
-
+          </section>
+        ))}
       </>
     );
   }

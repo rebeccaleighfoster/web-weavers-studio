@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Nav from '../Nav';
-
-
-
-
+import { URL } from "../../config";
 
 export default class ProjectsList extends React.Component {
   constructor(props) {
@@ -14,8 +11,7 @@ export default class ProjectsList extends React.Component {
     }
   }
   handleProjectDelete = (project_id) => {
-
-    fetch(`/projects/${project_id}`, {
+    fetch(`${URL}/projects/${project_id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json'
@@ -30,9 +26,10 @@ export default class ProjectsList extends React.Component {
         console.error({ error })
       })
   };
+  
   fetchProjectsByWeaverId = () => {
     const { weaver_id } = this.props.match.params;
-    fetch(`/projects/${weaver_id}`)
+    fetch(`${URL}/projects/${weaver_id}`)
       .then((resp) => {
         if (!resp.ok)
           return resp.json().then(e => Promise.reject(e));

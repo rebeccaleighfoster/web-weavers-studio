@@ -1,8 +1,7 @@
 import React from 'react';
 import Nav from '../Nav';
-
-
-import AddProjectForm from "./Form"
+import AddProjectForm from "./ProjectForm";
+import { URL } from "../../config";
 
 class EditProject extends React.Component {
     constructor(props) {
@@ -15,7 +14,7 @@ class EditProject extends React.Component {
 
     fetchProjectsByProjectId = () => {
         const { project_id } = this.props.match.params;
-        fetch(`/projects/project/${project_id}`)
+        fetch(`${URL}/projects/project/${project_id}`)
             .then((resp) => {
                 if (!resp.ok)
                     return resp.json().then(e => Promise.reject(e));

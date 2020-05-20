@@ -2,7 +2,8 @@ import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Nav from "../Nav";
-
+import { URL } from "../../config";
+ 
 const CreateProfileForm = () => (
   <div>
     <Formik
@@ -17,7 +18,7 @@ const CreateProfileForm = () => (
       }}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values, "from createprofile")
-        fetch(`/weavers`, {
+        fetch(`${URL}/weavers`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -26,11 +27,9 @@ const CreateProfileForm = () => (
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log(data);
             setSubmitting(false);
             window.location.href = '/weaverslist'
           });
-        console.log(values);
       }}
       validationSchema={Yup.object().shape({
         email: Yup.string()

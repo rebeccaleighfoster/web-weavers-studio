@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Nav'
 import { Link } from "react-router-dom";
-
+import { URL } from "../../config";
 
 class Allprojects extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class Allprojects extends Component {
 
     }
     fetchProjects = () => {
-        fetch(`/projects`)
+        fetch(`${URL}/projects`)
             .then((projectsResponse) => {
                 if (!projectsResponse.ok)
                     return projectsResponse.json().then(e => Promise.reject(e));
@@ -33,9 +33,6 @@ class Allprojects extends Component {
         this.fetchProjects();
     }
 
-    // handleOnClick = () => {
-    //     this.props.history.push(`/Weavers/${project.weaver_id}`)
-    // }
 
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from "../Nav"
+import { URL } from "../../config";
 
 class OneWeaver extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class OneWeaver extends Component {
 
     fetchOneWeaverByID = () => {
         const { weaver_id } = this.props.match.params;
-        fetch(`/weavers/weaver/${weaver_id}`)
+        fetch(`${URL}/weavers/weaver/${weaver_id}`)
             .then((resp) => {
                 if (!resp.ok)
                     return resp.json().then(e => Promise.reject(e));

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Nav from "../Nav"
-
-
+import { URL } from "../../config";
 
 export default class WeaversList extends React.Component {
     constructor(props) {
@@ -11,8 +10,9 @@ export default class WeaversList extends React.Component {
             weavers: [],
         };
     }
+
     fetchWeavers = () => {
-        fetch(`/weavers`)
+        fetch(`${URL}/weavers`)
             .then((weaversResponse) => {
                 if (!weaversResponse.ok)
                     return weaversResponse.json().then(e => Promise.reject(e));

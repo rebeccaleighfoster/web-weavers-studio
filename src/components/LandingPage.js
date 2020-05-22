@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
+import { Link } from 'react-router-dom'
 
 export default class LandingPage extends React.Component {
   render() {
@@ -7,17 +8,17 @@ export default class LandingPage extends React.Component {
       <>
         <Nav />
         <section className="infoText" id="landingPage">
-          <div>
-            <h1 className="biggerFont"> Web Weavers Studio </h1>
+          <div className='biggerFonts'>
+            <h1> Web Weavers Studio </h1>
             <h2> Connect with Handweavers </h2>
-            <h3 className="smallerFont">
+            <h3>
               A place where handweavers can connect with eachother, share ideas
               and projects!
             </h3>
           </div>
           <div>
             <h1> Share your projects and learn from others </h1>
-            <h3 className="smallerFont">
+            <h3>
               Weavers have been teaching eachother and passing along knowledge
               for decades. Use this app to keep the tradition of sharing tips
               going
@@ -25,10 +26,16 @@ export default class LandingPage extends React.Component {
           </div>
           <div>
             <h1> Keep track of your own projects </h1>
-            <h3 className="smallerFont">
+            <h3>
               Record all the details of your projects in one spot. Yarn and reed
               size, pictures, draft references, ends per inch and more
             </h3>
+            <li>
+              <Link to="/weaverslist"> Meet Weavers</Link>
+            </li>
+            <li>
+              <Link to="/projects"> See Projects</Link>
+            </li>
           </div>
         </section>
       </>

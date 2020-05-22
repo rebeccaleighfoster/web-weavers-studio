@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Bell MT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Bell MT W01'), local('BellMT'), url(http://themes.googleusercontent.com/licensed/font?kit=kmIaTfxu8bXVwPRMqRVUug) format('truetype');
+  }
+
+
 * {
         box-sizing: border-box;
 }
@@ -13,12 +21,6 @@ html{
     background-image: url(https://i.ibb.co/z8vkSdC/033119-Jean-Hughes-Portraits-Loom-120.jpg);
 }
 
-@font-face {
-    font-family: 'Bell MT';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Bell MT W01'), local('BellMT'), url(http://themes.googleusercontent.com/licensed/font?kit=kmIaTfxu8bXVwPRMqRVUug) format('truetype');
-  }
 
 .infoText{
     width: 50%;

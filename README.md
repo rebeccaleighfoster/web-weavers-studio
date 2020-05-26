@@ -12,9 +12,9 @@ Handweaving is a craft that has been passed down by women and men in in person s
 
 ### Landing Page:
 ![Landing Page](/src/screenshots/LandingPage.png)
-### New Sighting Form:
+### New Weaver Form:
 ![New Weaver Form](/src/screenshots/Form.png)
-### Sighting List:
+### Project Lis:
 ![Project List](/src/screenshots/ProjectList.png)
 
 ## Languages/Frameworks Utilized
@@ -27,7 +27,7 @@ Handweaving is a craft that has been passed down by women and men in in person s
 * [PostgreSQL](https://www.postgresql.org/)
 
 ## Live App
-[Wildlife Watch](https://web-weavers-studio-app.now.sh/)
+[Web Weavers Studio](https://web-weavers-studio-app.now.sh/)
 
 ## Server Repository
-[Wildlife Watch Server-Side Code](https://github.com/rebeccaleighfoster/web-weavers-studio-api)
+[Web Weavers Studio](https://github.com/rebeccaleighfoster/web-weavers-studio-api)

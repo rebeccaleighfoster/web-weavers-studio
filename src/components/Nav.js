@@ -5,7 +5,27 @@ export default class Nav extends React.Component {
   render() {
     return (
       <>
-        <nav id="hamburgerNav">
+        <div id="hamburgerNav">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="hamburgerLinks">
+            <li>
+              <Link to="/weaverslist"> Meet Weavers</Link>
+            </li>
+            <li>
+              <Link to="/projects"> See Projects</Link>
+            </li>
+            <li>
+              <Link to="/createprofile"> Create Profile </Link>
+            </li>
+            <li>
+              <Link to="/addProject"> Add Project </Link>
+            </li>
+          </ul>
+        </div>
+        <nav id="sideNav">
           <ul>
             <div className="link">
               <li className="loom">
@@ -17,18 +37,20 @@ export default class Nav extends React.Component {
                   ></img>
                 </Link>
               </li>
-              <li>
-                <Link to="/weaverslist"> Meet Weavers</Link>
-              </li>
-              <li>
-                <Link to="/projects"> See Projects</Link>
-              </li>
-              <li>
-                <Link to="/createprofile"> Create Profile </Link>
-              </li>
-              <li>
-                <Link to="/addProject"> Add Project </Link>
-              </li>
+              <div id="hamburgerLinks">
+                <li>
+                  <Link to="/weaverslist"> Meet Weavers</Link>
+                </li>
+                <li>
+                  <Link to="/projects"> See Projects</Link>
+                </li>
+                <li>
+                  <Link to="/createprofile"> Create Profile </Link>
+                </li>
+                <li>
+                  <Link to="/addProject"> Add Project </Link>
+                </li>
+              </div>
             </div>
           </ul>
         </nav>

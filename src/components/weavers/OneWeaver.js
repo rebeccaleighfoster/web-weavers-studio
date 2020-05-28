@@ -44,6 +44,7 @@ class OneWeaver extends Component {
   };
 
   render() {
+    console.log(this.state)
     return (
       <section>
         <Nav />

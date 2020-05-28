@@ -113,6 +113,10 @@ margin-top: 10px;
     display: block;
 }
 
+.loom:hover{
+  background-color: rgba(185, 164, 164);
+}
+
 #hamburgerNav{
   display: none;
 }
@@ -132,7 +136,7 @@ margin-top: 10px;
     font-family: "Bell MT";
   }
 
-.link :hover {
+#hamburgerLinks :hover {
     font-weight: 600;
     background-color: rgba(185, 164, 164);
 }

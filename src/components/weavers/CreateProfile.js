@@ -83,6 +83,7 @@ const CreateProfileForm = () => (
                 required
                 type="text"
                 name="email"
+                placeholder="name@weaving.com"
               />
             </div>
             <div className="smallerFont">
@@ -180,7 +181,7 @@ const CreateProfileForm = () => (
               </select>
             </div>
             <div className="smallerFont">
-              <label htmlFor="bio">Bio </label>
+              <label htmlFor="bio">Bio: </label>
               <input
                 value={values.bio}
                 onChange={handleChange}

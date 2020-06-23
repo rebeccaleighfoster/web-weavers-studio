@@ -1,5 +1,5 @@
 import React from "react";
-import Allprojects from "./AllProjects";
+import ListAllProjects from "../components/projects/ListAllProjects"
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
@@ -7,7 +7,7 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <BrowserRouter>
-      <Allprojects />
+      <ListAllProjects />
     </BrowserRouter>,
     div
   );

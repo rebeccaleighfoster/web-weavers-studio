@@ -27,6 +27,7 @@ export default class ProjectsList extends React.Component {
       });
   };
 
+  //get projects by a specific weaver
   fetchProjectsByWeaverId = () => {
     const { weaver_id } = this.props.match.params;
     fetch(`${URL}/projects/${weaver_id}`)
@@ -64,10 +65,8 @@ export default class ProjectsList extends React.Component {
         <>
           <Nav />
           <div className="infoText">
-            {" "}
             <h2> That weaver has not recorded any projects yet.</h2>
             <button>
-              {" "}
               <Link to="/weaversList"> Back to Weavers </Link>{" "}
             </button>
           </div>

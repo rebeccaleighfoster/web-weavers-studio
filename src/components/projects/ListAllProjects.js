@@ -11,6 +11,7 @@ class Allprojects extends Component {
     };
   }
 
+  //get all projects
   fetchProjects = () => {
     fetch(`${URL}/projects`)
       .then((projectsResponse) => {
@@ -33,7 +34,6 @@ class Allprojects extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <section>
         <Nav />

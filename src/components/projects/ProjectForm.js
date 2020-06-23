@@ -3,6 +3,7 @@ import "../stylesheets/myStyles.css";
 import React, { Component } from "react";
 import { URL } from "../../config";
 
+//post request to add new project
 function AddProject(values, setSubmitting) {
   fetch(`${URL}/projects`, {
     method: "POST",
@@ -19,6 +20,7 @@ function AddProject(values, setSubmitting) {
     });
 }
 
+//patch request to edit existing project
 const EditProject = (values, setSubmitting) => {
   const id = values.id;
   delete values.id;
@@ -44,6 +46,7 @@ class AddProjectForm extends Component {
       weavers: [],
     };
   }
+  //get weaver names to populate dropdown box
   getName = () => {
     fetch(`${URL}/weavers`)
       .then((weaversResponse) => {
@@ -99,11 +102,13 @@ class AddProjectForm extends Component {
                 <p id="formHeader" className="biggerFont">
                   Add a New Project
                 </p>
+                <label htmlFor="weaver_id">Weaver Name</label>
                 <select
                   name="weaver_id"
                   className="custom-search-select"
                   value={values.weaver_id}
                   onChange={handleChange}
+                  id="weaver_id"
                 >
                   <option>Select Name</option>
                   {names}

@@ -11,6 +11,7 @@ class EditProject extends React.Component {
     };
   }
 
+  //get only one project
   fetchProjectsByProjectId = () => {
     const { project_id } = this.props.match.params;
     fetch(`${URL}/projects/project/${project_id}`)

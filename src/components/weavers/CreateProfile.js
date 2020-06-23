@@ -58,6 +58,7 @@ const CreateProfileForm = () => (
                 placeholder="First Name"
                 type="text"
                 name="first_name"
+                id="firstName"
               />
               <ErrorMessage name="first_name" />
             </div>

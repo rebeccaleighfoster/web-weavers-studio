@@ -10,7 +10,7 @@ export default class WeaversList extends React.Component {
       weavers: [],
     };
   }
-
+//get all weavers
   fetchWeavers = () => {
     fetch(`${URL}/weavers`)
       .then((weaversResponse) => {

@@ -164,7 +164,8 @@ margin-top: 10px;
 }
 .infoText{
     width: 75%;
-    margin-left: 85px;
+    margin-left: auto;
+    margin-top: 40px;
     margin-right: auto;
     text-align: center;
   }

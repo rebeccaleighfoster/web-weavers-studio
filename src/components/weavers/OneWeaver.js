@@ -9,7 +9,7 @@ class OneWeaver extends Component {
       weaver: "",
     };
   }
-
+//get one weaver's information
   fetchOneWeaverByID = () => {
     const { weaver_id } = this.props.match.params;
     fetch(`${URL}/weavers/weaver/${weaver_id}`)
